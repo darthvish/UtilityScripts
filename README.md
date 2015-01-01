@@ -6,3 +6,5 @@ This script backup some directories to dropbox
 This script moves files from one directory to another directory based on user speciefied file extension
 ### open_terminal.py
 python script which supposed to work with nautilus to open terminal with specified directory based on in which path user run script using nautilus. To make this script to work it need to stored in ~/.gnome2/nautilus-scripts on gnome2 and in gnome3 ~/.local/share/nautilus/scripts with executable permission.
+### dlautomate.py
+python script to automate torrent downloading on my computer. based on computer state it start and stop torrent downloading software. 
