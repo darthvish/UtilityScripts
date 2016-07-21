@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 import os
+import logging
+
+#logging.basicConfig(level=logging.DEBUG, filename="logs.data", filemode="w")
+#logger = logging.getLogger(__name__)
 
 def parse_nautilus_environment():
     result = {
@@ -14,7 +18,12 @@ def parse_nautilus_environment():
         else:
             result[i] = []
     return result
+
 def open_terminal(result):
-    os.system("/usr/bin/gnome-terminal --working-directory=%s" %result['NAUTILUS_SCRIPT_CURRENT_URI'][1][2:])
+	path = result['NAUTILUS_SCRIPT_CURRENT_URI'][1][2:]
+	path = path.replace("%20", " ")
+	#logger.debug(path)
+	#os.system("zenity --info --text '%s'"%path)
+	os.system("/usr/bin/gnome-terminal --working-directory='%s'" %path)
 
 open_terminal(parse_nautilus_environment())
